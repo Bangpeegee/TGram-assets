@@ -2,17 +2,11 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<meta name="viewport"
-      content="width=device-width,
-      initial-scale=1,
-      maximum-scale=1,
-      user-scalable=no">
-
-<title>TGram (TGR) Presale</title>
+<title>TGram TGR Presale</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -20,1700 +14,806 @@
 }
 
 body{
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family:Arial,sans-serif;
   background:#050b14;
-  color:#fff;
-  min-height:100vh;
+  color:white;
 }
 
 .app{
-  width:100%;
-  max-width:520px;
+  max-width:500px;
   margin:auto;
-  padding:14px 15px 30px;
+  padding:18px 14px 40px;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-.top{
+.center{
   text-align:center;
-  padding:18px 5px;
 }
 
 .logo{
   width:82px;
   height:82px;
-
-  margin:auto;
-
   border-radius:50%;
-
-  display:block;
-
   object-fit:cover;
-
-  box-shadow:
-    0 0 35px rgba(25,174,240,.35);
-
-  border:2px solid rgba(255,255,255,.08);
+  box-shadow:0 0 30px #159ed5;
 }
 
-.title{
+h1{
   margin-top:12px;
-
   font-size:30px;
-
-  font-weight:900;
 }
 
-.title span{
-  color:#27b8ee;
+h1 span{
+  color:#28b9ef;
 }
 
-.network{
+.badge{
   display:inline-block;
-
-  margin-top:7px;
-
-  padding:6px 13px;
-
+  margin-top:8px;
+  padding:6px 12px;
   border-radius:20px;
-
-  background:#10253a;
-
-  color:#58c9f3;
-
+  background:#10263b;
+  color:#5cccf4;
   font-size:10px;
-
-  font-weight:800;
+  font-weight:bold;
 }
 
-
-/* =========================
-   HERO
-========================= */
+.card{
+  margin-top:13px;
+  padding:18px;
+  border-radius:20px;
+  background:#0c1827;
+  border:1px solid #172b40;
+}
 
 .hero{
-
-  padding:23px 17px;
-
-  border-radius:24px;
-
   text-align:center;
-
-  background:
-
-    radial-gradient(
-      circle at 50% 0,
-      rgba(28,169,237,.20),
-      transparent 48%
-    ),
-
-    linear-gradient(
-      145deg,
-      #0d2034,
-      #08121e
-    );
-
-  border:
-    1px solid
-    rgba(50,184,239,.13);
+  background:linear-gradient(145deg,#102d47,#08121e);
 }
 
-.label{
-
-  color:#42c4f1;
-
-  font-size:11px;
-
-  font-weight:900;
-
-  letter-spacing:1.5px;
-}
-
-.hero h1{
-
-  font-size:31px;
-
-  margin-top:8px;
-
-  line-height:1.1;
+.hero h2{
+  font-size:28px;
 }
 
 .hero p{
-
-  color:#91a4b9;
-
-  font-size:13px;
-
-  line-height:1.6;
-
   margin-top:10px;
+  color:#91a5b9;
+  font-size:13px;
+  line-height:1.6;
 }
-
-
-/* =========================
-   BUY BUTTON
-========================= */
 
 .buy{
-
   display:block;
-
-  margin-top:19px;
-
-  padding:17px;
-
+  margin-top:18px;
+  padding:16px;
   border-radius:15px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #16b5ed,
-      #316eff
-    );
-
+  background:linear-gradient(135deg,#18b8ed,#346aff);
   color:white;
-
   text-decoration:none;
-
-  text-align:center;
-
   font-size:17px;
-
-  font-weight:900;
-
-  box-shadow:
-    0 10px 30px
-    rgba(24,139,239,.22);
-
-  transition:.15s;
+  font-weight:bold;
 }
 
-.buy:active{
-
-  transform:scale(.97);
-
+.count-title{
+  text-align:center;
+  color:#43c8f3;
+  font-weight:bold;
+  font-size:12px;
 }
 
+.timer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  margin-top:12px;
+}
 
-/* =========================
-   LIQUIDITY
-========================= */
+.time{
+  background:#050c15;
+  border-radius:12px;
+  padding:12px 3px;
+  text-align:center;
+}
+
+.time b{
+  font-size:22px;
+}
+
+.time small{
+  display:block;
+  margin-top:4px;
+  color:#718399;
+  font-size:8px;
+}
 
 .liquidity{
-
-  margin-top:12px;
-
-  padding:21px 14px;
-
   text-align:center;
-
-  border-radius:21px;
-
-  background:
-
-    linear-gradient(
-      145deg,
-      #102d2a,
-      #07191b
-    );
-
-  border:
-    1px solid
-    rgba(57,219,159,.20);
+  background:#071d1b;
+  border:1px solid #174b40;
 }
 
-.liquidity .big{
-
-  font-size:39px;
-
+.liquidity strong{
+  display:block;
   color:#43dda4;
-
-  font-weight:1000;
+  font-size:40px;
 }
 
-.liquidity h2{
-
-  font-size:19px;
-
-  margin-top:2px;
+.liquidity b{
+  font-size:18px;
 }
 
 .liquidity p{
-
   margin-top:8px;
-
-  color:#91aaa5;
-
+  color:#8fa9a2;
   font-size:11px;
-
-  line-height:1.6;
+  line-height:1.5;
 }
 
+.sold-title{
+  display:flex;
+  justify-content:space-between;
+  font-weight:bold;
+}
 
-/* =========================
-   STATS
-========================= */
+.sold-percent{
+  color:#43dda4;
+}
 
-.stats{
+.progress{
+  margin-top:12px;
+  height:12px;
+  background:#050b14;
+  border-radius:20px;
+  overflow:hidden;
+}
 
+.progress-bar{
+  width:25%;
+  height:100%;
+  background:linear-gradient(90deg,#18b8ed,#43dda4);
+}
+
+.numbers{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:10px;
-
+  grid-template-columns:1fr 1fr;
+  gap:8px;
   margin-top:12px;
 }
 
-.stat{
-
-  padding:15px 8px;
-
-  text-align:center;
-
-  border-radius:16px;
-
-  background:#0c1827;
-
-  border:
-    1px solid
-    rgba(255,255,255,.05);
+.number{
+  background:#07111d;
+  padding:13px;
+  border-radius:12px;
 }
 
-.stat b{
-
-  font-size:20px;
-}
-
-.stat small{
-
+.number b{
   display:block;
-
-  margin-top:5px;
-
-  color:#718399;
-
-  font-size:10px;
+  font-size:15px;
 }
 
-
-/* =========================
-   MENU
-========================= */
-
-.menu-title{
-
-  margin-top:23px;
-
-  margin-bottom:10px;
-
-  font-size:16px;
-
-  font-weight:900;
+.number small{
+  color:#718399;
+  font-size:9px;
 }
 
 .menu{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:8px;
 }
 
 .menu button{
-
-  border:0;
-
-  border-radius:15px;
-
   padding:13px 5px;
-
+  border:0;
+  border-radius:13px;
   background:#0d1a2a;
-
-  color:#fff;
-
-  border:
-    1px solid
-    rgba(255,255,255,.06);
-
-  font-size:11px;
-
-  font-weight:800;
-
-  cursor:pointer;
-
-  transition:.15s;
-}
-
-.menu button:active{
-
-  transform:scale(.96);
+  color:white;
+  font-weight:bold;
 }
 
 .menu button.active{
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #126f9f,
-      #2254b6
-    );
-
-  border-color:
-    rgba(54,186,240,.25);
+  background:#175b86;
 }
 
-
-/* =========================
-   PAGES
-========================= */
-
 .page{
-
   display:none;
-
-  margin-top:12px;
 }
 
 .page.active{
-
   display:block;
-
-  animation:
-    fadeIn .2s ease;
 }
 
-@keyframes fadeIn{
-
-  from{
-    opacity:0;
-    transform:translateY(5px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.item{
+  padding:14px 0;
+  border-bottom:1px solid #172638;
 }
 
-
-/* =========================
-   CARD
-========================= */
-
-.card{
-
-  padding:17px;
-
-  border-radius:18px;
-
-  background:#0c1827;
-
-  border:
-    1px solid
-    rgba(255,255,255,.06);
-
-  margin-bottom:10px;
-}
-
-.card h3{
-
-  font-size:16px;
-
-  margin-bottom:8px;
-}
-
-.card p{
-
-  color:#899bae;
-
-  font-size:12px;
-
-  line-height:1.65;
-}
-
-
-/* =========================
-   ROADMAP
-========================= */
-
-.roadmap{
-
-  margin-top:12px;
-}
-
-.road{
-
-  display:flex;
-
-  gap:12px;
-
-  padding:15px 0;
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.06);
-}
-
-.road:last-child{
-
+.item:last-child{
   border-bottom:0;
 }
 
-.q{
-
-  min-width:48px;
-
-  height:48px;
-
-  border-radius:14px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  background:#12324b;
-
-  color:#45c7f2;
-
-  font-size:13px;
-
-  font-weight:900;
-}
-
-.road h4{
-
+.item h3{
   font-size:14px;
-
-  margin-bottom:5px;
 }
 
-.road p{
-
-  margin:0;
-
+.item p{
+  margin-top:5px;
+  color:#8b9caf;
   font-size:11px;
+  line-height:1.6;
 }
-
-
-/* =========================
-   FEATURES
-========================= */
-
-.feature{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:12px;
-
-  padding:13px 0;
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.06);
-}
-
-.feature:last-child{
-
-  border-bottom:0;
-}
-
-.icon{
-
-  width:42px;
-
-  height:42px;
-
-  flex-shrink:0;
-
-  border-radius:12px;
-
-  background:#10263b;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:20px;
-}
-
-.feature h4{
-
-  font-size:13px;
-}
-
-.feature p{
-
-  font-size:10px;
-
-  margin-top:3px;
-}
-
-
-/* =========================
-   ADDRESS
-========================= */
 
 .address{
-
+  margin-top:10px;
   padding:11px;
-
-  background:#050c15;
-
   border-radius:10px;
-
+  background:#050b14;
   color:#8193a8;
-
-  font-size:10px;
-
-  line-height:1.5;
-
+  font-size:9px;
   word-break:break-all;
-
-  margin-top:9px;
 }
-
-
-/* =========================
-   SPECIAL LIQUIDITY BOX
-========================= */
-
-.liquidity-box{
-
-  margin-top:14px;
-
-  padding:18px;
-
-  border-radius:17px;
-
-  text-align:center;
-
-  background:#071d1b;
-
-  border:
-    1px solid
-    rgba(67,221,164,.18);
-}
-
-.liquidity-box strong{
-
-  display:block;
-
-  font-size:30px;
-
-  color:#43dda4;
-}
-
-.liquidity-box span{
-
-  display:block;
-
-  margin-top:4px;
-
-  font-size:13px;
-
-  font-weight:900;
-}
-
-.liquidity-box small{
-
-  display:block;
-
-  margin-top:7px;
-
-  color:#819c96;
-
-  font-size:10px;
-
-  line-height:1.5;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
 
 .footer{
-
   text-align:center;
-
+  margin-top:25px;
   color:#526174;
-
   font-size:9px;
-
   line-height:1.7;
-
-  padding-top:20px;
 }
-
-
-/* TELEGRAM SAFE AREA */
-
-@supports(padding:max(0px)){
-
-  .app{
-
-    padding-bottom:
-      max(
-        30px,
-        env(safe-area-inset-bottom)
-      );
-
-  }
-
-}
-
 </style>
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+<!-- LOGO -->
 
-<!-- =====================
-     HEADER
-===================== -->
+<div class="center">
 
-<div class="top">
+<img
+class="logo"
+src="https://raw.githubusercontent.com/Bangpeegee/TGram-assets/main/TGram.png"
+onerror="this.style.display='none'"
+>
 
-  <img
-    class="logo"
-    src="https://raw.githubusercontent.com/Bangpeegee/TGram-assets/main/TGram.png"
-    alt="TGram Logo"
-    onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex';"
-  >
+<h1>TGram <span>TGR</span></h1>
 
-  <div
-    id="logoFallback"
-    style="
-      display:none;
-      width:82px;
-      height:82px;
-      margin:auto;
-      border-radius:50%;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,#19baf0,#286eff);
-      font-size:35px;
-      font-weight:900;
-    ">
-    T
-  </div>
-
-
-  <div class="title">
-
-    TGram <span>TGR</span>
-
-  </div>
-
-
-  <div class="network">
-
-    TON NETWORK
-
-  </div>
+<div class="badge">
+TON NETWORK
+</div>
 
 </div>
 
 
+<!-- HERO -->
 
-<!-- =====================
-     HERO
-===================== -->
+<div class="card hero">
 
-<div class="hero">
+<div style="color:#43c8f3;font-size:11px;font-weight:bold;">
+🔥 TGRAM PRESALE
+</div>
 
-  <div class="label">
+<h2 style="margin-top:8px;">
+Get TGR Early
+</h2>
 
-    🔥 TGRAM PRESALE
+<p>
+Join TGram presale and become part of
+the future community-driven TON ecosystem.
+</p>
 
-  </div>
+<a
+class="buy"
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
+target="_blank">
 
+🚀 BUY TGR
 
-  <h1>
-
-    Get TGR Early
-
-  </h1>
-
-
-  <p>
-
-    Join the TGram ecosystem through presale,
-    future mining, referral rewards and
-    ecosystem development.
-
-  </p>
-
-
-  <a
-    class="buy"
-
-    href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-
-    target="_blank"
-
-    rel="noopener noreferrer">
-
-    🚀 BUY TGR
-
-  </a>
+</a>
 
 </div>
 
 
+<!-- COUNTDOWN -->
 
-<!-- =====================
-     LIQUIDITY
-===================== -->
+<div class="card">
 
-<div class="liquidity">
+<div class="count-title">
+🔥 PRESALE ENDS IN
+</div>
 
-  <div class="big">
+<div class="timer">
 
-    100%
+<div class="time">
+<b id="days">00</b>
+<small>HARI</small>
+</div>
 
-  </div>
+<div class="time">
+<b id="hours">00</b>
+<small>JAM</small>
+</div>
 
+<div class="time">
+<b id="minutes">00</b>
+<small>MENIT</small>
+</div>
 
-  <h2>
+<div class="time">
+<b id="seconds">00</b>
+<small>DETIK</small>
+</div>
 
-    PRESALE → LIQUIDITY
-
-  </h2>
-
-
-  <p>
-
-    Seluruh dana hasil presale akan dialokasikan
-    untuk penyediaan likuiditas TGR sesuai
-    mekanisme dan kebijakan proyek.
-
-  </p>
+</div>
 
 </div>
 
 
+<!-- LIQUIDITY -->
 
-<!-- =====================
-     STATS
-===================== -->
+<div class="card liquidity">
 
-<div class="stats">
+<strong>100%</strong>
 
+<b>PRESALE → LIQUIDITY</b>
 
-  <div class="stat">
-
-    <b>900M</b>
-
-    <small>
-      TREASURY TGR
-    </small>
-
-  </div>
-
-
-  <div class="stat">
-
-    <b>9</b>
-
-    <small>
-      DECIMALS
-    </small>
-
-  </div>
-
-
-  <div class="stat">
-
-    <b>TON</b>
-
-    <small>
-      NETWORK
-    </small>
-
-  </div>
-
-
-  <div class="stat">
-
-    <b>TGR</b>
-
-    <small>
-      SYMBOL
-    </small>
-
-  </div>
-
+<p>
+100% dana presale akan dialokasikan
+untuk likuiditas sesuai mekanisme proyek.
+</p>
 
 </div>
 
 
+<!-- SOLD -->
 
-<!-- =====================
-     MENU
-===================== -->
+<div class="card">
 
-<div class="menu-title">
+<div class="sold-title">
 
-  📱 TGram Menu
+<span>🪙 TGR PRESALE SOLD</span>
+
+<span class="sold-percent">
+7%
+</span>
 
 </div>
 
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<div class="numbers">
+
+<div class="number">
+
+<b>250,000,000 TGR</b>
+
+<small>
+SOLD
+</small>
+
+</div>
+
+<div class="number">
+
+<b>1,000,000,000 TGR</b>
+
+<small>
+TARGET
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MENU -->
+
+<div style="margin-top:22px;margin-bottom:10px;font-weight:bold;">
+📱 TGram Menu
+</div>
 
 <div class="menu">
 
+<button class="active"
+onclick="showPage('roadmap',this)">
+🗺️<br>Roadmap
+</button>
 
-  <button
-    class="active"
-    onclick="openPage('roadmap',this)">
+<button onclick="showPage('mining',this)">
+⛏️<br>Mining
+</button>
 
-    🗺️
-    <br>
-    Roadmap
+<button onclick="showPage('referral',this)">
+🎁<br>Referral
+</button>
 
-  </button>
+<button onclick="showPage('liquidity',this)">
+💧<br>Liquidity
+</button>
 
+<button onclick="showPage('token',this)">
+🪙<br>Token
+</button>
 
-  <button
-    onclick="openPage('mining',this)">
-
-    ⛏️
-    <br>
-    Mining
-
-  </button>
-
-
-  <button
-    onclick="openPage('referral',this)">
-
-    🎁
-    <br>
-    Referral
-
-  </button>
-
-
-  <button
-    onclick="openPage('liquidityPage',this)">
-
-    💧
-    <br>
-    Liquidity
-
-  </button>
-
-
-  <button
-    onclick="openPage('token',this)">
-
-    🪙
-    <br>
-    Token
-
-  </button>
-
-
-  <button
-    onclick="openPage('info',this)">
-
-    ℹ️
-    <br>
-    Info
-
-  </button>
-
+<button onclick="showPage('info',this)">
+ℹ️<br>Info
+</button>
 
 </div>
 
 
+<!-- ROADMAP -->
 
-<!-- =====================
-     ROADMAP
-===================== -->
+<div id="roadmap" class="page active">
 
-<div
-  id="roadmap"
-  class="page active">
+<div class="card">
 
+<div class="item">
 
-  <div class="card">
+<h3>Q1 — 🚀 Launch & Presale</h3>
 
+<p>
+Launch TGR, presale, community building
+dan persiapan ekosistem.
+</p>
 
-    <h3>
+</div>
 
-      🗺️ TGram Roadmap
+<div class="item">
 
-    </h3>
+<h3>Q2 — ⛏️ Mining Program</h3>
 
+<p>
+Pengembangan program mining TGR,
+partisipasi komunitas dan reward.
+</p>
 
-    <p>
+</div>
 
-      Rencana pengembangan TGram dibagi
-      menjadi beberapa tahap. Timeline dapat
-      berubah mengikuti perkembangan komunitas
-      dan ekosistem.
+<div class="item">
 
-    </p>
+<h3>Q3 — 🎁 Referral</h3>
 
+<p>
+Referral rewards, community campaign
+dan growth program.
+</p>
 
+</div>
 
-    <div class="roadmap">
+<div class="item">
 
+<h3>Q4 — 🌐 Ecosystem</h3>
 
-      <!-- Q1 -->
+<p>
+Pengembangan utilitas TGR dan
+fitur ekosistem berikutnya.
+</p>
 
-      <div class="road">
+</div>
 
-        <div class="q">
-
-          Q1
-
-        </div>
-
-
-        <div>
-
-          <h4>
-
-            🚀 Launch & Presale
-
-          </h4>
-
-
-          <p>
-
-            Peluncuran TGR, presale,
-            community building dan persiapan
-            ekosistem.
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- Q2 -->
-
-      <div class="road">
-
-        <div class="q">
-
-          Q2
-
-        </div>
-
-
-        <div>
-
-          <h4>
-
-            ⛏️ Mining Program
-
-          </h4>
-
-
-          <p>
-
-            Pengembangan program mining TGR,
-            sistem partisipasi komunitas
-            dan reward.
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- Q3 -->
-
-      <div class="road">
-
-        <div class="q">
-
-          Q3
-
-        </div>
-
-
-        <div>
-
-          <h4>
-
-            🎁 Referral & Community
-
-          </h4>
-
-
-          <p>
-
-            Pengembangan referral rewards,
-            campaign komunitas dan growth
-            program.
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- Q4 -->
-
-      <div class="road">
-
-        <div class="q">
-
-          Q4
-
-        </div>
-
-
-        <div>
-
-          <h4>
-
-            🌐 Ecosystem Expansion
-
-          </h4>
-
-
-          <p>
-
-            Pengembangan utilitas TGR dan
-            fitur ekosistem berikutnya.
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
+<!-- MINING -->
 
-<!-- =====================
-     MINING
-===================== -->
+<div id="mining" class="page">
 
-<div
-  id="mining"
-  class="page">
+<div class="card">
 
+<h3>⛏️ TGR Mining</h3>
 
-  <div class="card">
+<div class="item">
 
+<h3>Mining Participation</h3>
 
-    <h3>
+<p>
+Program mining TGR direncanakan menjadi
+bagian dari ekosistem TGram.
+</p>
 
-      ⛏️ TGR Mining
+</div>
 
-    </h3>
+<div class="item">
 
+<h3>Community Rewards</h3>
 
-    <p>
+<p>
+Peserta dapat memperoleh reward sesuai
+mekanisme program yang ditentukan.
+</p>
 
-      Program mining TGR direncanakan menjadi
-      salah satu bagian utama ekosistem TGram.
+</div>
 
-    </p>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        ⛏️
-
-      </div>
-
-
-      <div>
-
-        <h4>
-
-          Mining Participation
-
-        </h4>
-
-
-        <p>
-
-          Program partisipasi komunitas
-          untuk mendapatkan reward TGR.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        ⚡
-
-      </div>
-
-
-      <div>
-
-        <h4>
-
-          Community Activity
-
-        </h4>
-
-
-        <p>
-
-          Aktivitas komunitas dapat menjadi
-          bagian dari mekanisme reward.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        💎
-
-      </div>
-
-
-      <div>
-
-        <h4>
-
-          Long-Term Ecosystem
-
-        </h4>
-
-
-        <p>
-
-          Mining dirancang sebagai bagian
-          dari pengembangan jangka panjang.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-  </div>
+</div>
 
 </div>
 
 
+<!-- REFERRAL -->
 
-<!-- =====================
-     REFERRAL
-===================== -->
+<div id="referral" class="page">
 
-<div
-  id="referral"
-  class="page">
+<div class="card">
 
+<h3>🎁 Referral Program</h3>
 
-  <div class="card">
+<div class="item">
 
+<h3>Invite Friends</h3>
 
-    <h3>
+<p>
+Ajak komunitas baru bergabung
+dengan ekosistem TGram.
+</p>
 
-      🎁 Referral Program
+</div>
 
-    </h3>
+<div class="item">
 
+<h3>Referral Rewards</h3>
 
-    <p>
+<p>
+Program reward referral akan dikembangkan
+sebagai bagian dari ekosistem.
+</p>
 
-      TGram merencanakan program referral
-      untuk membantu komunitas memperluas
-      ekosistem dan memberikan reward kepada
-      peserta sesuai aturan program.
+</div>
 
-    </p>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        👥
-
-      </div>
-
-
-      <div>
-
-        <h4>
-
-          Invite Community
-
-        </h4>
-
-
-        <p>
-
-          Mengundang pengguna baru
-          ke ekosistem.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        🎁
-
-      </div>
-
-
-      <div>
-
-        <h4>
-
-          Referral Rewards
-
-        </h4>
-
-
-        <p>
-
-          Reward berdasarkan mekanisme
-          program yang ditentukan.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-  </div>
+</div>
 
 </div>
 
 
+<!-- LIQUIDITY -->
 
-<!-- =====================
-     LIQUIDITY PAGE
-===================== -->
+<div id="liquidity" class="page">
 
-<div
-  id="liquidityPage"
-  class="page">
+<div class="card liquidity">
 
+<strong>100%</strong>
 
-  <div class="card">
+<b>PRESALE → LIQUIDITY</b>
 
+<p>
+Dana presale dialokasikan untuk
+likuiditas sesuai kebijakan proyek.
+</p>
 
-    <h3>
-
-      💧 TGR Liquidity
-
-    </h3>
-
-
-    <p>
-
-      Likuiditas merupakan bagian penting
-      dari ekosistem TGR dan menjadi fokus
-      penggunaan dana presale sesuai
-      kebijakan proyek.
-
-    </p>
-
-
-
-    <div class="liquidity-box">
-
-      <strong>
-
-        100%
-
-      </strong>
-
-
-      <span>
-
-        PRESALE → LIQUIDITY
-
-      </span>
-
-
-      <small>
-
-        Dana presale dialokasikan untuk
-        likuiditas sesuai mekanisme proyek.
-
-      </small>
-
-    </div>
-
-
-  </div>
-
+</div>
 
 </div>
 
 
+<!-- TOKEN -->
 
-<!-- =====================
-     TOKEN
-===================== -->
+<div id="token" class="page">
 
-<div
-  id="token"
-  class="page">
+<div class="card">
 
+<div class="item">
+<h3>Name</h3>
+<p>TGram</p>
+</div>
 
-  <div class="card">
+<div class="item">
+<h3>Symbol</h3>
+<p>TGR</p>
+</div>
 
+<div class="item">
+<h3>Network</h3>
+<p>TON</p>
+</div>
 
-    <h3>
+<div class="item">
+<h3>Decimals</h3>
+<p>9</p>
+</div>
 
-      🪙 TGR Token
+<div class="item">
 
-    </h3>
+<h3>Jetton Master</h3>
 
+<div class="address">
+EQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z
+</div>
 
+</div>
 
-    <div class="feature">
-
-      <div class="icon">
-
-        💎
-
-      </div>
-
-
-      <div>
-
-        <h4>Name</h4>
-
-        <p>TGram</p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        🔤
-
-      </div>
-
-
-      <div>
-
-        <h4>Symbol</h4>
-
-        <p>TGR</p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        🌐
-
-      </div>
-
-
-      <div>
-
-        <h4>Network</h4>
-
-        <p>TON</p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="feature">
-
-      <div class="icon">
-
-        🔢
-
-      </div>
-
-
-      <div>
-
-        <h4>Decimals</h4>
-
-        <p>9</p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="address">
-
-      EQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z
-
-    </div>
-
-
-  </div>
+</div>
 
 </div>
 
 
+<!-- INFO -->
 
-<!-- =====================
-     INFO
-===================== -->
+<div id="info" class="page">
 
-<div
-  id="info"
-  class="page">
+<div class="card">
 
+<h3>ℹ️ About TGram</h3>
 
-  <div class="card">
+<p style="margin-top:10px;color:#8b9caf;font-size:12px;line-height:1.6;">
 
+TGram adalah community-driven TON Jetton
+yang berfokus pada long-term holding,
+mining participation, referral rewards
+dan pengembangan ekosistem.
 
-    <h3>
-
-      ℹ️ About TGram
-
-    </h3>
-
-
-    <p>
-
-      TGram adalah community-driven TON Jetton
-      yang berfokus pada long-term holding,
-      mining participation, referral rewards
-      dan pengembangan ekosistem.
-
-    </p>
-
-
-  </div>
-
-
-
-  <div class="card">
-
-
-    <h3>
-
-      🔐 Treasury
-
-    </h3>
-
-
-    <p>
-
-      Current Treasury Allocation
-
-    </p>
-
-
-    <div style="
-      font-size:24px;
-      font-weight:900;
-      color:#43dda4;
-      margin-top:8px;
-    ">
-
-      900,000,000 TGR
-
-    </div>
-
-
-    <div class="address">
-
-      UQB6anJFdQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
-
-    </div>
-
-
-  </div>
-
-
-
-  <div class="card">
-
-
-    <h3>
-
-      🛡️ On-chain Transparency
-
-    </h3>
-
-
-    <p>
-
-      Jetton Master dan Treasury dapat
-      diverifikasi secara independen
-      pada blockchain TON.
-
-    </p>
-
-
-  </div>
-
+</p>
 
 </div>
 
 
+<div class="card">
 
-<!-- =====================
-     FOOTER
-===================== -->
+<h3>🔐 Treasury</h3>
+
+<p style="margin-top:10px;color:#8b9caf;font-size:11px;">
+
+Current Treasury Allocation
+
+</p>
+
+<h2 style="margin-top:7px;color:#43dda4;">
+900,000,000 TGR
+</h2>
+
+<div class="address">
+UQB6anJF dQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
+</div>
+
+</div>
+
+</div>
+
 
 <div class="footer">
 
-  TGram (TGR) • TON Jetton
+TGram (TGR) • TON Jetton
 
-  <br>
+<br>
 
-  Community-driven ecosystem
+Community-driven ecosystem
 
-  <br><br>
+<br><br>
 
-  Always verify the official Jetton
-  Master address before trading.
-
-</div>
-
+Always verify the official Jetton Master
+before trading.
 
 </div>
 
+</div>
 
 
 <script>
 
 /* =========================
-   MENU NAVIGATION
+COUNTDOWN
 ========================= */
 
-function openPage(id,button){
+/*
+  45 hari dari 27 Agustus 2026.
+  Kalau mau mengganti tanggal,
+  ubah tanggal di bawah.
+*/
 
-  /* Hide all pages */
+const endDate =
+new Date("2026-10-11T23:59:59+07:00").getTime();
+
+
+function countdown(){
+
+  const now =
+  new Date().getTime();
+
+  let distance =
+  endDate - now;
+
+  if(distance < 0){
+    distance = 0;
+  }
+
+  const day =
+  Math.floor(
+    distance / 86400000
+  );
+
+  const hour =
+  Math.floor(
+    (distance % 86400000)
+    / 3600000
+  );
+
+  const minute =
+  Math.floor(
+    (distance % 3600000)
+    / 60000
+  );
+
+  const second =
+  Math.floor(
+    (distance % 60000)
+    / 1000
+  );
+
+
+  document.getElementById("days")
+  .innerText =
+  String(day).padStart(2,"0");
+
+
+  document.getElementById("hours")
+  .innerText =
+  String(hour).padStart(2,"0");
+
+
+  document.getElementById("minutes")
+  .innerText =
+  String(minute).padStart(2,"0");
+
+
+  document.getElementById("seconds")
+  .innerText =
+  String(second).padStart(2,"0");
+
+}
+
+
+countdown();
+
+setInterval(
+  countdown,
+  1000
+);
+
+
+/* =========================
+MENU
+========================= */
+
+function showPage(
+  id,
+  button
+){
 
   document
-    .querySelectorAll(".page")
-    .forEach(function(page){
+  .querySelectorAll(".page")
+  .forEach(
+    page =>
+    page.classList.remove("active")
+  );
 
-      page.classList.remove("active");
-
-    });
-
-
-  /* Remove active buttons */
 
   document
-    .querySelectorAll(".menu button")
-    .forEach(function(btn){
+  .querySelectorAll(".menu button")
+  .forEach(
+    btn =>
+    btn.classList.remove("active")
+  );
 
-      btn.classList.remove("active");
-
-    });
-
-
-  /* Show selected page */
 
   document
-    .getElementById(id)
-    .classList.add("active");
+  .getElementById(id)
+  .classList.add("active");
 
-
-  /* Activate button */
 
   button.classList.add("active");
-
-
-  /* Scroll */
-
-  document
-    .getElementById(id)
-    .scrollIntoView({
-
-      behavior:"smooth",
-
-      block:"start"
-
-    });
 
 }
 
 
 /* =========================
-   TELEGRAM MINI APP
+TELEGRAM
 ========================= */
 
 if(
@@ -1728,7 +828,6 @@ if(
 }
 
 </script>
-
 
 </body>
 </html>

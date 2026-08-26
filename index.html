@@ -39,8 +39,6 @@ body{
   overflow-x:hidden;
 }
 
-/* BACKGROUND */
-
 body:before{
   content:"";
   position:fixed;
@@ -75,8 +73,6 @@ body:before{
   top:500px;
   right:-300px;
 }
-
-/* CONTAINER */
 
 .container{
   width:min(1120px,92%);
@@ -118,14 +114,15 @@ body:before{
 
 .nav-links{
   display:flex;
-  gap:28px;
+  gap:25px;
 }
 
 .nav-links a{
   color:#9aa7b8;
   text-decoration:none;
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
+  transition:.2s;
 }
 
 .nav-links a:hover{
@@ -200,38 +197,42 @@ body:before{
 
 .hero-buttons{
   display:flex;
+  flex-wrap:wrap;
   gap:12px;
   margin-top:32px;
 }
 
-.primary{
+.primary,
+.secondary{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:165px;
+  min-width:150px;
   padding:16px 22px;
   border-radius:12px;
-  color:white;
   text-decoration:none;
   font-size:12px;
+  transition:.2s;
+}
+
+.primary{
+  color:white;
   font-weight:900;
   background:linear-gradient(135deg,#18bff1,#426cff);
   box-shadow:0 15px 40px rgba(32,145,245,.2);
 }
 
 .secondary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:130px;
-  padding:16px 22px;
-  border-radius:12px;
   color:white;
-  text-decoration:none;
-  font-size:12px;
   font-weight:800;
   border:1px solid var(--line);
   background:rgba(255,255,255,.025);
+}
+
+.primary:hover,
+.secondary:hover,
+.nav-buy:hover{
+  transform:translateY(-2px);
 }
 
 /* HERO VISUAL */
@@ -252,6 +253,7 @@ body:before{
     0 0 50px rgba(30,190,245,.2),
     0 0 130px rgba(46,91,255,.12);
   animation:float 5s ease-in-out infinite;
+  z-index:2;
 }
 
 .coin img{
@@ -452,6 +454,56 @@ section.content{
   line-height:1.7;
 }
 
+/* LIQUIDITY POOL */
+
+.pool-card{
+  margin-top:20px;
+  padding:30px;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 0,rgba(53,230,162,.08),transparent 50%),
+    var(--panel);
+  border:1px solid rgba(53,230,162,.13);
+  text-align:center;
+}
+
+.pool-title{
+  color:#77869a;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.pool-name{
+  margin-top:10px;
+  font-size:25px;
+  font-weight:900;
+}
+
+.pool-name span{
+  color:var(--green);
+}
+
+.pool-address{
+  margin:18px auto 0;
+  max-width:750px;
+  padding:14px;
+  border-radius:10px;
+  background:#04070c;
+  color:#73849a;
+  font-size:9px;
+  line-height:1.6;
+  word-break:break-all;
+}
+
+.pool-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
 /* ROADMAP */
 
 .roadmap{
@@ -467,6 +519,17 @@ section.content{
   background:var(--panel);
   border:1px solid var(--line);
   position:relative;
+  overflow:hidden;
+}
+
+.road:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--blue),transparent);
 }
 
 .road-q{
@@ -671,6 +734,7 @@ footer{
 .footer-links{
   display:flex;
   gap:18px;
+  flex-wrap:wrap;
 }
 
 .footer-links a{
@@ -810,6 +874,7 @@ TGram <span>TGR</span>
 
 <div class="nav-links">
 <a href="#presale">Presale</a>
+<a href="#liquidity">Liquidity</a>
 <a href="#ecosystem">Ecosystem</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#token">Token</a>
@@ -818,7 +883,8 @@ TGram <span>TGR</span>
 <a
 class="nav-buy"
 href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 BUY TGR
 
@@ -854,7 +920,8 @@ referral rewards and future ecosystem development.
 <a
 class="primary"
 href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 🚀 BUY TGR
 
@@ -862,9 +929,11 @@ target="_blank">
 
 <a
 class="secondary"
-href="#roadmap">
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
+target="_blank"
+rel="noopener noreferrer">
 
-Explore Roadmap →
+💧 LIQUIDITY
 
 </a>
 
@@ -967,10 +1036,10 @@ alt="TGram">
 
 <!-- LIQUIDITY -->
 
-<section class="content">
+<section class="content" id="liquidity">
 
 <div class="section-tag">
-PRESALE STRUCTURE
+LIQUIDITY
 </div>
 
 <h2 class="section-title">
@@ -980,8 +1049,9 @@ in mind.
 
 <p class="section-desc">
 TGram places liquidity at the center of the presale
-structure. According to the project plan, 100% of
-presale funds are intended for liquidity provision.
+structure. According to the project's stated plan,
+100% of presale funds are intended for liquidity
+provision.
 </p>
 
 <div class="liquidity-grid">
@@ -1002,7 +1072,19 @@ toward liquidity according to the project's stated
 mechanism and policy.
 </p>
 
+<a
+class="primary"
+style="margin-top:25px;width:100%;"
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
+target="_blank"
+rel="noopener noreferrer">
+
+💧 PROVIDE LIQUIDITY
+
+</a>
+
 </div>
+
 
 <div class="info-grid">
 
@@ -1011,60 +1093,107 @@ mechanism and policy.
 <div class="info-icon">💧</div>
 
 <h3>
-Liquidity Focus
+Liquidity Pool
 </h3>
 
 <p>
-Designed to support a healthier trading
-environment for the TGR ecosystem.
+TGR liquidity is configured through
+STON.fi on the TON network.
 </p>
 
 </div>
+
+
+<div class="info-card">
+
+<div class="info-icon">🔗</div>
+
+<h3>
+STON.fi
+</h3>
+
+<p>
+Access the configured liquidity interface
+directly through Tonkeeper.
+</p>
+
+</div>
+
 
 <div class="info-card">
 
 <div class="info-icon">🔐</div>
 
 <h3>
-Transparency
+On-chain
 </h3>
 
 <p>
-Jetton Master and Treasury holdings
-can be independently verified on-chain.
+Pool and token information can be
+independently verified on-chain.
 </p>
 
 </div>
 
-<div class="info-card">
-
-<div class="info-icon">🌐</div>
-
-<h3>
-TON Ecosystem
-</h3>
-
-<p>
-TGR is launched as a Jetton on the
-TON blockchain.
-</p>
-
-</div>
 
 <div class="info-card">
 
 <div class="info-icon">⚡</div>
 
 <h3>
-Community Driven
+TON Network
 </h3>
 
 <p>
-Focused on community participation and
-long-term ecosystem development.
+TGR operates as a Jetton on the
+TON blockchain.
 </p>
 
 </div>
+
+</div>
+
+</div>
+
+
+<!-- POOL -->
+
+<div class="pool-card">
+
+<div class="pool-title">
+TGR LIQUIDITY POOL
+</div>
+
+<div class="pool-name">
+TGR <span>×</span> TON
+</div>
+
+<div class="pool-address">
+Pool:
+EQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE
+</div>
+
+<div class="pool-buttons">
+
+<a
+class="primary"
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
+target="_blank"
+rel="noopener noreferrer">
+
+💧 ADD LIQUIDITY
+
+</a>
+
+<a
+class="secondary"
+href="https://tonviewer.com/EQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE"
+target="_blank"
+rel="noopener noreferrer">
+
+VERIFY POOL →
+
+</a>
 
 </div>
 
@@ -1298,7 +1427,8 @@ EQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z
 class="secondary"
 style="margin-top:15px;width:100%;"
 href="https://tonviewer.com/EQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 VERIFY ON TONVIEWER →
 
@@ -1347,6 +1477,17 @@ Treasury Wallet
 UQB6anJF dQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
 </div>
 
+<a
+class="secondary"
+style="margin-top:15px;"
+href="https://tonviewer.com/UQB6anJFdQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno"
+target="_blank"
+rel="noopener noreferrer">
+
+VERIFY TREASURY →
+
+</a>
+
 </div>
 
 </section>
@@ -1377,9 +1518,16 @@ launched on the TON network.
 <details>
 <summary>Where can I buy TGR?</summary>
 <p>
-Use the official BUY TGR button on this page,
-which opens the configured STON.fi swap through
-Tonkeeper.
+Use the BUY TGR button on this page to open
+the configured STON.fi swap through Tonkeeper.
+</p>
+</details>
+
+<details>
+<summary>Where is the TGR liquidity pool?</summary>
+<p>
+The configured liquidity pool is available
+through the Liquidity buttons on this page.
 </p>
 </details>
 
@@ -1428,15 +1576,29 @@ Become part of the TGram community and follow
 the development of TGR across the TON ecosystem.
 </p>
 
+<div class="hero-buttons" style="justify-content:center;">
+
 <a
 class="primary"
-style="margin:auto;"
 href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 🚀 BUY TGR
 
 </a>
+
+<a
+class="secondary"
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
+target="_blank"
+rel="noopener noreferrer">
+
+💧 LIQUIDITY
+
+</a>
+
+</div>
 
 </div>
 
@@ -1465,6 +1627,7 @@ Community-driven TON Jetton<br>
 <div class="footer-links">
 
 <a href="#presale">Presale</a>
+<a href="#liquidity">Liquidity</a>
 <a href="#ecosystem">Ecosystem</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#token">Token</a>
@@ -1483,15 +1646,6 @@ Community-driven TON Jetton<br>
 /* ============================
    COUNTDOWN
    ============================ */
-
-/*
-   Presale ends:
-   11 October 2026
-   23:59:59 WIB
-
-   Ganti tanggal di sini jika
-   tanggal presale berubah.
-*/
 
 const presaleEnd =
 new Date(
@@ -1579,4 +1733,4 @@ if(
 </script>
 
 </body>
-</html>
+  </html>

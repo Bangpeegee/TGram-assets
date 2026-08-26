@@ -1,0 +1,43 @@
+## TGram (TGR)
+
+This PR adds metadata for the newly launched TGram (TGR) Jetton on TON.
+
+### Jetton
+
+- Name: TGram
+- Symbol: TGR
+- Network: TON
+- Decimals: 9
+- Jetton Master:
+  EQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z
+
+### Project
+
+TGram is a newly launched community-driven TON Jetton focused on
+long-term holding, mining participation, referral rewards and
+future ecosystem development.
+
+Project assets and documentation:
+https://github.com/Bangpeegee/TGram-assets
+
+### On-chain transparency
+
+A dedicated Treasury wallet has been established:
+
+UQB6anJFdQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
+
+Current Treasury allocation:
+900,000,000 TGR
+
+The project is newly launched, therefore its holder distribution
+and transaction history are still limited.
+
+The Jetton Master and Treasury holdings can be independently
+verified on-chain.
+
+### Logo
+
+The image field points directly to the PNG asset in the project's
+public GitHub repository.
+
+Thank you for reviewing TGram.

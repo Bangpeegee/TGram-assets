@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#05070d">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#03050a">
 
-<title>TGram — TGR Presale</title>
+<title>TGram PreLaunch Mining Season 1</title>
+
+<!-- TON CONNECT -->
+<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
   --bg:#03050a;
-  --panel:#0a0e17;
-  --panel2:#0d131e;
+  --panel:#080d15;
+  --panel2:#0b121d;
   --blue:#20bdf3;
   --blue2:#4777ff;
   --green:#35e6a2;
+  --red:#ff4567;
+  --yellow:#ffd75a;
   --text:#f7fbff;
   --muted:#8793a6;
   --line:rgba(255,255,255,.08);
@@ -33,7 +38,7 @@ html{
 }
 
 body{
-  background:var(--bg);
+  background:#03050a;
   color:var(--text);
   font-family:Inter,Arial,sans-serif;
   overflow-x:hidden;
@@ -43,35 +48,52 @@ body:before{
   content:"";
   position:fixed;
   inset:0;
-  z-index:-3;
+  z-index:-5;
   background:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:55px 55px;
-  mask-image:linear-gradient(to bottom,black,transparent 85%);
+    linear-gradient(rgba(32,189,243,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(32,189,243,.035) 1px,transparent 1px);
+  background-size:45px 45px;
+  mask-image:linear-gradient(to bottom,#000,transparent 90%);
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.018) 0px,
+      rgba(255,255,255,.018) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  opacity:.25;
 }
 
 .orb{
   position:fixed;
-  width:500px;
-  height:500px;
+  width:420px;
+  height:420px;
   border-radius:50%;
   filter:blur(120px);
-  opacity:.12;
-  z-index:-2;
+  opacity:.13;
+  z-index:-3;
   pointer-events:none;
 }
 
 .orb.one{
   background:#00bfff;
-  top:-280px;
-  left:-200px;
+  top:-220px;
+  left:-180px;
 }
 
 .orb.two{
   background:#315eff;
-  top:500px;
-  right:-300px;
+  top:550px;
+  right:-250px;
 }
 
 .container{
@@ -79,7 +101,7 @@ body:before{
   margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAV ================= */
 
 .nav{
   height:78px;
@@ -87,6 +109,7 @@ body:before{
   align-items:center;
   justify-content:space-between;
   position:relative;
+  z-index:20;
 }
 
 .logo-wrap{
@@ -122,7 +145,6 @@ body:before{
   text-decoration:none;
   font-size:11px;
   font-weight:600;
-  transition:.2s;
 }
 
 .nav-links a:hover{
@@ -137,10 +159,9 @@ body:before{
   font-size:11px;
   font-weight:800;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
-  box-shadow:0 8px 25px rgba(32,189,243,.18);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:calc(100vh - 78px);
@@ -175,8 +196,8 @@ body:before{
 
 .hero h1{
   margin-top:22px;
-  font-size:clamp(48px,7vw,82px);
-  line-height:.96;
+  font-size:clamp(45px,7vw,80px);
+  line-height:.98;
   letter-spacing:-4px;
   font-weight:900;
 }
@@ -213,11 +234,13 @@ body:before{
   text-decoration:none;
   font-size:12px;
   transition:.2s;
+  cursor:pointer;
 }
 
 .primary{
   color:white;
   font-weight:900;
+  border:0;
   background:linear-gradient(135deg,#18bff1,#426cff);
   box-shadow:0 15px 40px rgba(32,145,245,.2);
 }
@@ -235,7 +258,7 @@ body:before{
   transform:translateY(-2px);
 }
 
-/* HERO VISUAL */
+/* ================= COIN ================= */
 
 .hero-visual{
   display:flex;
@@ -264,8 +287,12 @@ body:before{
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
+  0%,100%{
+    transform:translateY(0)
+  }
+  50%{
+    transform:translateY(-14px)
+  }
 }
 
 .coin-ring{
@@ -278,10 +305,12 @@ body:before{
 }
 
 @keyframes spin{
-  to{transform:rotate(360deg)}
+  to{
+    transform:rotate(360deg)
+  }
 }
 
-/* COUNTDOWN */
+/* ================= COUNTDOWN ================= */
 
 .countdown-box{
   margin-top:38px;
@@ -329,7 +358,7 @@ body:before{
   display:block;
 }
 
-/* TRUST */
+/* ================= TRUST ================= */
 
 .trust-bar{
   border-top:1px solid var(--line);
@@ -359,7 +388,7 @@ body:before{
   font-size:9px;
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 
 section.content{
   padding:110px 0;
@@ -387,7 +416,293 @@ section.content{
   font-size:13px;
 }
 
-/* LIQUIDITY */
+/* ================= MATRIX MINING ================= */
+
+.mining-section{
+  padding:100px 0;
+}
+
+.mining-header{
+  text-align:center;
+}
+
+.matrix-title{
+  margin-top:12px;
+  font-size:clamp(27px,6vw,48px);
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:-2px;
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #20bdf3,
+    #4777ff
+  );
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.matrix-subtitle{
+  margin:14px auto 0;
+  max-width:600px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+/* matrix terminal */
+
+.matrix-box{
+  position:relative;
+  margin:45px auto 0;
+  max-width:800px;
+  min-height:530px;
+  overflow:hidden;
+  border:1px solid rgba(32,189,243,.18);
+  border-radius:24px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(32,189,243,.06),
+      transparent 60%
+    ),
+    #020509;
+  box-shadow:
+    0 0 50px rgba(32,189,243,.08),
+    inset 0 0 50px rgba(0,0,0,.8);
+}
+
+/* matrix rain */
+
+#matrixCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:.25;
+}
+
+/* terminal */
+
+.matrix-content{
+  position:relative;
+  z-index:2;
+  padding:30px;
+}
+
+.matrix-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(32,189,243,.12);
+}
+
+.matrix-status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--green);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.status-light{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 15px var(--green);
+}
+
+.season{
+  color:#627287;
+  font-size:9px;
+  font-weight:800;
+}
+
+/* mining title */
+
+.mining-name{
+  text-align:center;
+  margin-top:30px;
+}
+
+.mining-name small{
+  color:#5d7087;
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.mining-name h2{
+  margin-top:8px;
+  font-size:28px;
+  font-weight:900;
+}
+
+.mining-name h2 span{
+  color:var(--blue);
+}
+
+/* balance */
+
+.mining-balance{
+  margin:30px auto 0;
+  text-align:center;
+}
+
+.mining-balance-label{
+  color:#63758a;
+  font-size:9px;
+  letter-spacing:1px;
+  font-weight:800;
+}
+
+.mining-balance-value{
+  margin-top:8px;
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:-2px;
+}
+
+.mining-balance-value span{
+  color:var(--blue);
+  font-size:17px;
+  letter-spacing:0;
+}
+
+/* mining speed */
+
+.mining-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:30px;
+}
+
+.mining-stat{
+  padding:16px 10px;
+  text-align:center;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+}
+
+.mining-stat strong{
+  display:block;
+  font-size:16px;
+}
+
+.mining-stat span{
+  display:block;
+  margin-top:5px;
+  color:#607084;
+  font-size:8px;
+}
+
+/* wallet */
+
+.wallet-panel{
+  margin-top:25px;
+  padding:18px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(0,0,0,.25);
+}
+
+.wallet-label{
+  color:#627287;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.wallet-address{
+  margin-top:8px;
+  color:#9eacbd;
+  font-size:10px;
+  word-break:break-all;
+  line-height:1.6;
+}
+
+.wallet-status{
+  margin-top:10px;
+  font-size:9px;
+  color:var(--red);
+}
+
+.wallet-status.connected{
+  color:var(--green);
+}
+
+/* mining button */
+
+.mine-button{
+  width:100%;
+  margin-top:22px;
+  padding:18px;
+  border:0;
+  border-radius:14px;
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  cursor:pointer;
+  background:linear-gradient(
+    135deg,
+    #16bff1,
+    #456bff
+  );
+  box-shadow:
+    0 10px 35px rgba(32,189,243,.18);
+}
+
+.mine-button:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+.mine-button.active{
+  background:linear-gradient(
+    135deg,
+    #18d99a,
+    #159e76
+  );
+}
+
+/* requirement */
+
+.requirement{
+  margin-top:12px;
+  text-align:center;
+  color:#69788c;
+  font-size:8px;
+  line-height:1.7;
+}
+
+/* mining log */
+
+.mining-log{
+  margin-top:22px;
+  height:90px;
+  overflow:hidden;
+  padding:13px;
+  border-radius:12px;
+  background:#010305;
+  border:1px solid rgba(32,189,243,.08);
+  font-family:monospace;
+  font-size:8px;
+  line-height:1.8;
+  color:#4f7d8b;
+}
+
+.log-green{
+  color:#35e6a2;
+}
+
+/* ================= LIQUIDITY ================= */
 
 .liquidity-grid{
   display:grid;
@@ -401,7 +716,11 @@ section.content{
   min-height:300px;
   border-radius:22px;
   background:
-    radial-gradient(circle at 80% 20%,rgba(50,230,165,.1),transparent 35%),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(50,230,165,.1),
+      transparent 35%
+    ),
     var(--panel);
   border:1px solid rgba(53,230,162,.12);
 }
@@ -454,14 +773,18 @@ section.content{
   line-height:1.7;
 }
 
-/* LIQUIDITY POOL */
+/* ================= POOL ================= */
 
 .pool-card{
   margin-top:20px;
   padding:30px;
   border-radius:22px;
   background:
-    radial-gradient(circle at 50% 0,rgba(53,230,162,.08),transparent 50%),
+    radial-gradient(
+      circle at 50% 0,
+      rgba(53,230,162,.08),
+      transparent 50%
+    ),
     var(--panel);
   border:1px solid rgba(53,230,162,.13);
   text-align:center;
@@ -504,7 +827,7 @@ section.content{
   margin-top:18px;
 }
 
-/* ROADMAP */
+/* ================= ROADMAP ================= */
 
 .roadmap{
   margin-top:45px;
@@ -529,7 +852,11 @@ section.content{
   left:0;
   right:0;
   height:2px;
-  background:linear-gradient(90deg,var(--blue),transparent);
+  background:linear-gradient(
+    90deg,
+    var(--blue),
+    transparent
+  );
 }
 
 .road-q{
@@ -550,7 +877,7 @@ section.content{
   line-height:1.7;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 
 .features{
   display:grid;
@@ -562,7 +889,11 @@ section.content{
 .feature{
   padding:28px;
   border-radius:18px;
-  background:linear-gradient(145deg,#0b111b,#070b12);
+  background:linear-gradient(
+    145deg,
+    #0b111b,
+    #070b12
+  );
   border:1px solid var(--line);
 }
 
@@ -589,7 +920,7 @@ section.content{
   line-height:1.7;
 }
 
-/* TOKEN */
+/* ================= TOKEN ================= */
 
 .token-box{
   margin-top:45px;
@@ -634,14 +965,18 @@ section.content{
   word-break:break-all;
 }
 
-/* TREASURY */
+/* ================= TREASURY ================= */
 
 .treasury{
   margin-top:45px;
   padding:30px;
   border-radius:22px;
   background:
-    radial-gradient(circle at 50% 0,rgba(32,189,243,.08),transparent 45%),
+    radial-gradient(
+      circle at 50% 0,
+      rgba(32,189,243,.08),
+      transparent 45%
+    ),
     var(--panel);
   border:1px solid var(--line);
   text-align:center;
@@ -659,7 +994,7 @@ section.content{
   font-size:11px;
 }
 
-/* FAQ */
+/* ================= FAQ ================= */
 
 .faq{
   margin-top:40px;
@@ -687,15 +1022,23 @@ details p{
   line-height:1.7;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 
 .final-cta{
   padding:70px 25px;
   text-align:center;
   border-radius:25px;
   background:
-    radial-gradient(circle at 50% 0,rgba(32,189,243,.16),transparent 45%),
-    linear-gradient(145deg,#0c1724,#070b12);
+    radial-gradient(
+      circle at 50% 0,
+      rgba(32,189,243,.16),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #0c1724,
+      #070b12
+    );
   border:1px solid rgba(32,189,243,.12);
 }
 
@@ -712,7 +1055,7 @@ details p{
   line-height:1.7;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   padding:55px 0 35px;
@@ -743,7 +1086,7 @@ footer{
   font-size:10px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -844,6 +1187,22 @@ footer{
     gap:20px;
     text-align:center;
   }
+
+  .matrix-content{
+    padding:20px;
+  }
+
+  .matrix-box{
+    min-height:560px;
+  }
+
+  .mining-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mining-balance-value{
+    font-size:35px;
+  }
 }
 </style>
 </head>
@@ -855,7 +1214,7 @@ footer{
 
 <div class="container">
 
-<!-- NAV -->
+<!-- ================= NAV ================= -->
 
 <nav class="nav">
 
@@ -874,6 +1233,7 @@ TGram <span>TGR</span>
 
 <div class="nav-links">
 <a href="#presale">Presale</a>
+<a href="#mining">Mining</a>
 <a href="#liquidity">Liquidity</a>
 <a href="#ecosystem">Ecosystem</a>
 <a href="#roadmap">Roadmap</a>
@@ -893,7 +1253,7 @@ BUY TGR
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <main class="hero" id="presale">
 
@@ -912,7 +1272,7 @@ The Next<br>
 <p class="hero-text">
 TGram is a community-driven TON Jetton built
 around long-term holding, mining participation,
-referral rewards and future ecosystem development.
+community growth and future ecosystem development.
 </p>
 
 <div class="hero-buttons">
@@ -929,11 +1289,9 @@ rel="noopener noreferrer">
 
 <a
 class="secondary"
-href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
-target="_blank"
-rel="noopener noreferrer">
+href="#mining">
 
-💧 LIQUIDITY
+⛏️ START MINING
 
 </a>
 
@@ -996,7 +1354,7 @@ alt="TGram">
 </div>
 
 
-<!-- TRUST BAR -->
+<!-- ================= TRUST ================= -->
 
 <div class="trust-bar">
 
@@ -1034,7 +1392,191 @@ alt="TGram">
 <div class="container">
 
 
-<!-- LIQUIDITY -->
+<!-- ==================================================
+     MATRIX MINING
+================================================== -->
+
+<section class="mining-section" id="mining">
+
+<div class="mining-header">
+
+<div class="section-tag">
+TGRAM MINING SYSTEM
+</div>
+
+<h2 class="matrix-title">
+TGram PreLaunch Mining Season 1
+</h2>
+
+<p class="matrix-subtitle">
+Participate in the TGram PreLaunch Mining Season 1.
+Connect your TON wallet and hold at least
+<strong>10,000 TGR</strong> to unlock mining.
+</p>
+
+</div>
+
+
+<div class="matrix-box">
+
+<canvas id="matrixCanvas"></canvas>
+
+<div class="matrix-content">
+
+<div class="matrix-top">
+
+<div class="matrix-status">
+<span class="status-light"></span>
+MINING NETWORK ONLINE
+</div>
+
+<div class="season">
+SEASON 01
+</div>
+
+</div>
+
+
+<div class="mining-name">
+
+<small>PRELAUNCH MINING</small>
+
+<h2>
+TGram <span>×</span> MATRIX
+</h2>
+
+</div>
+
+
+<div class="mining-balance">
+
+<div class="mining-balance-label">
+MINED TGR
+</div>
+
+<div class="mining-balance-value">
+<span id="minedAmount">0.0000</span>
+<span>TGR</span>
+</div>
+
+</div>
+
+
+<div class="mining-stats">
+
+<div class="mining-stat">
+
+<strong id="miningSpeed">
+0.00
+</strong>
+
+<span>
+TGR / HOUR
+</span>
+
+</div>
+
+<div class="mining-stat">
+
+<strong id="miningTime">
+00:00:00
+</strong>
+
+<span>
+SESSION
+</span>
+
+</div>
+
+<div class="mining-stat">
+
+<strong>
+10,000
+</strong>
+
+<span>
+MIN HODL
+</span>
+
+</div>
+
+</div>
+
+
+<div class="wallet-panel">
+
+<div class="wallet-label">
+TON WALLET
+</div>
+
+<div
+class="wallet-address"
+id="walletAddress">
+
+Wallet not connected
+
+</div>
+
+<div
+class="wallet-status"
+id="walletStatus">
+
+🔴 Wallet not connected
+
+</div>
+
+</div>
+
+
+<div id="tonConnectButton"
+style="margin-top:18px;">
+</div>
+
+
+<button
+class="mine-button"
+id="mineButton"
+disabled>
+
+🔒 CONNECT WALLET TO START
+
+</button>
+
+
+<div class="requirement">
+
+Minimum requirement:
+<strong>10,000 TGR</strong> balance.<br>
+
+Wallet connection is required before mining.
+
+</div>
+
+
+<div class="mining-log" id="miningLog">
+
+<div>
+&gt; TGram Matrix Mining System initialized...
+</div>
+
+<div>
+&gt; Waiting for TON wallet connection...
+</div>
+
+<div>
+&gt; Minimum HODL requirement: 10,000 TGR
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LIQUIDITY ================= -->
 
 <section class="content" id="liquidity">
 
@@ -1050,8 +1592,7 @@ in mind.
 <p class="section-desc">
 TGram places liquidity at the center of the presale
 structure. According to the project's stated plan,
-100% of presale funds are intended for liquidity
-provision.
+100% of presale funds are intended for liquidity provision.
 </p>
 
 <div class="liquidity-grid">
@@ -1129,8 +1670,8 @@ On-chain
 </h3>
 
 <p>
-Pool and token information can be
-independently verified on-chain.
+Pool and token information can be independently
+verified on-chain.
 </p>
 
 </div>
@@ -1145,8 +1686,7 @@ TON Network
 </h3>
 
 <p>
-TGR operates as a Jetton on the
-TON blockchain.
+TGR operates as a Jetton on the TON blockchain.
 </p>
 
 </div>
@@ -1155,8 +1695,6 @@ TON blockchain.
 
 </div>
 
-
-<!-- POOL -->
 
 <div class="pool-card">
 
@@ -1202,7 +1740,7 @@ VERIFY POOL →
 </section>
 
 
-<!-- ECOSYSTEM -->
+<!-- ================= ECOSYSTEM ================= -->
 
 <section class="content" id="ecosystem">
 
@@ -1232,9 +1770,9 @@ TGR Mining
 </h3>
 
 <p>
-A planned mining participation program
-designed around community activity and
-future TGR rewards.
+PreLaunch Mining Season 1 provides a
+community participation mechanism
+for eligible TGR holders.
 </p>
 
 </div>
@@ -1246,12 +1784,12 @@ future TGR rewards.
 </div>
 
 <h3>
-Referral Rewards
+Community Rewards
 </h3>
 
 <p>
-A future referral system designed to help
-the community grow and reward participation.
+Future community reward programs are
+planned as the ecosystem develops.
 </p>
 
 </div>
@@ -1268,7 +1806,7 @@ Future Ecosystem
 
 <p>
 Further utilities and ecosystem features
-are planned as the project develops.
+are planned as TGram develops.
 </p>
 
 </div>
@@ -1278,7 +1816,7 @@ are planned as the project develops.
 </section>
 
 
-<!-- ROADMAP -->
+<!-- ================= ROADMAP ================= -->
 
 <section class="content" id="roadmap">
 
@@ -1326,7 +1864,7 @@ Mining Program
 </h3>
 
 <p>
-Development of the TGR mining program,
+TGR PreLaunch Mining Season 1,
 participation system and rewards.
 </p>
 
@@ -1339,12 +1877,12 @@ Q3
 </div>
 
 <h3>
-Referral & Community
+Community Growth
 </h3>
 
 <p>
-Referral rewards, community campaigns
-and growth programs.
+Community campaigns, growth programs
+and ecosystem expansion.
 </p>
 
 </div>
@@ -1371,7 +1909,7 @@ features.
 </section>
 
 
-<!-- TOKEN -->
+<!-- ================= TOKEN ================= -->
 
 <section class="content" id="token">
 
@@ -1441,7 +1979,7 @@ VERIFY ON TONVIEWER →
 </section>
 
 
-<!-- TREASURY -->
+<!-- ================= TREASURY ================= -->
 
 <section class="content">
 
@@ -1461,8 +1999,15 @@ on the TON blockchain.
 
 <div class="treasury">
 
-<div style="color:#738196;font-size:10px;font-weight:800;letter-spacing:1px;">
+<div style="
+color:#738196;
+font-size:10px;
+font-weight:800;
+letter-spacing:1px;
+">
+
 CURRENT TREASURY ALLOCATION
+
 </div>
 
 <div class="treasury-value">
@@ -1473,8 +2018,16 @@ CURRENT TREASURY ALLOCATION
 Treasury Wallet
 </p>
 
-<div class="address" style="max-width:650px;margin:15px auto 0;text-align:left;">
-UQB6anJF dQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
+<div
+class="address"
+style="
+max-width:650px;
+margin:15px auto 0;
+text-align:left;
+">
+
+UQB6anJFdQiWNRonV4nXoyX06njgMlXklPmBu5zZOlyvoHno
+
 </div>
 
 <a
@@ -1493,7 +2046,7 @@ VERIFY TREASURY →
 </section>
 
 
-<!-- FAQ -->
+<!-- ================= FAQ ================= -->
 
 <section class="content">
 
@@ -1508,52 +2061,87 @@ Frequently asked.
 <div class="faq">
 
 <details>
-<summary>What is TGram?</summary>
+
+<summary>
+What is TGram?
+</summary>
+
 <p>
 TGram (TGR) is a community-driven Jetton
 launched on the TON network.
 </p>
+
 </details>
 
+
 <details>
-<summary>Where can I buy TGR?</summary>
+
+<summary>
+What is PreLaunch Mining Season 1?
+</summary>
+
 <p>
-Use the BUY TGR button on this page to open
-the configured STON.fi swap through Tonkeeper.
+It is the TGram mining participation program
+for eligible TGR holders.
 </p>
+
 </details>
 
+
 <details>
-<summary>Where is the TGR liquidity pool?</summary>
+
+<summary>
+What is the minimum TGR required?
+</summary>
+
 <p>
-The configured liquidity pool is available
-through the Liquidity buttons on this page.
+The mining interface requires a minimum
+holding of 10,000 TGR.
 </p>
+
 </details>
 
+
 <details>
-<summary>What is the presale allocation?</summary>
+
+<summary>
+Do I need a wallet?
+</summary>
+
 <p>
-The project's stated plan is to allocate 100%
-of presale funds toward liquidity.
+Yes. A compatible TON wallet must be connected
+before mining can be started.
 </p>
+
 </details>
 
+
 <details>
-<summary>Will there be mining?</summary>
+
+<summary>
+Where can I buy TGR?
+</summary>
+
 <p>
-A TGR mining participation program is planned
-as part of the future ecosystem.
+Use the BUY TGR button to open the configured
+STON.fi swap through Tonkeeper.
 </p>
+
 </details>
 
+
 <details>
-<summary>Can the token contract be verified?</summary>
+
+<summary>
+Can the token contract be verified?
+</summary>
+
 <p>
 Yes. The Jetton Master address is publicly
 available and can be checked independently
 on the TON blockchain.
 </p>
+
 </details>
 
 </div>
@@ -1561,7 +2149,7 @@ on the TON blockchain.
 </section>
 
 
-<!-- FINAL CTA -->
+<!-- ================= CTA ================= -->
 
 <section class="content">
 
@@ -1572,29 +2160,28 @@ Join TGram early.
 </h2>
 
 <p>
-Become part of the TGram community and follow
-the development of TGR across the TON ecosystem.
+Connect your TON wallet and participate in
+TGram PreLaunch Mining Season 1.
+Minimum HODL requirement: 10,000 TGR.
 </p>
 
 <div class="hero-buttons" style="justify-content:center;">
 
 <a
 class="primary"
-href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
-target="_blank"
-rel="noopener noreferrer">
+href="#mining">
 
-🚀 BUY TGR
+⛏️ START MINING
 
 </a>
 
 <a
 class="secondary"
-href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fliquidity%2Fprovide%3Ftype%3DBalanced%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z%26pool%3DEQDt7zYiuLT7iXOHnbMOHZLWVZEZafapsRaNjzoVF7JJNtvE%26fa%3D%25221%2522"
+href="https://app.tonkeeper.com/dapp/https%3A%2F%2Fapp.ston.fi%2Fswap%3Fmode%3Dton-chain%26chartVisible%3Dfalse%26ft%3DGRAM%26tt%3DEQDymqX9ZyAl_XRi_PefRsQkzwhirepe95ibUS_lB-9gc66z"
 target="_blank"
 rel="noopener noreferrer">
 
-💧 LIQUIDITY
+🚀 BUY TGR
 
 </a>
 
@@ -1604,11 +2191,10 @@ rel="noopener noreferrer">
 
 </section>
 
-
 </div>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1619,6 +2205,7 @@ rel="noopener noreferrer">
 <div class="footer-copy">
 
 <strong>TGram (TGR)</strong><br>
+PreLaunch Mining Season 1<br>
 Community-driven TON Jetton<br>
 © 2026 TGram
 
@@ -1627,6 +2214,7 @@ Community-driven TON Jetton<br>
 <div class="footer-links">
 
 <a href="#presale">Presale</a>
+<a href="#mining">Mining</a>
 <a href="#liquidity">Liquidity</a>
 <a href="#ecosystem">Ecosystem</a>
 <a href="#roadmap">Roadmap</a>
@@ -1643,9 +2231,9 @@ Community-driven TON Jetton<br>
 
 <script>
 
-/* ============================
+/* ==================================================
    COUNTDOWN
-   ============================ */
+================================================== */
 
 const presaleEnd =
 new Date(
@@ -1688,7 +2276,6 @@ function updateCountdown(){
     1000
   );
 
-
   document.getElementById("days")
   .textContent =
   String(days).padStart(2,"0");
@@ -1707,7 +2294,6 @@ function updateCountdown(){
 
 }
 
-
 updateCountdown();
 
 setInterval(
@@ -1716,9 +2302,523 @@ setInterval(
 );
 
 
-/* ============================
+/* ==================================================
+   MATRIX RAIN
+================================================== */
+
+const canvas =
+document.getElementById("matrixCanvas");
+
+const ctx =
+canvas.getContext("2d");
+
+function resizeMatrix(){
+
+  canvas.width =
+  canvas.offsetWidth;
+
+  canvas.height =
+  canvas.offsetHeight;
+
+}
+
+resizeMatrix();
+
+window.addEventListener(
+  "resize",
+  resizeMatrix
+);
+
+const chars =
+"01TGRAM<>[]{}#$%";
+
+let fontSize = 12;
+let drops = [];
+
+function resetDrops(){
+
+  const columns =
+  Math.floor(
+    canvas.width / fontSize
+  );
+
+  drops =
+  Array(columns)
+  .fill(1)
+  .map(
+    () =>
+      Math.floor(
+        Math.random() *
+        canvas.height /
+        fontSize
+      )
+  );
+
+}
+
+resetDrops();
+
+function drawMatrix(){
+
+  ctx.fillStyle =
+  "rgba(2,5,9,.08)";
+
+  ctx.fillRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  ctx.font =
+  fontSize + "px monospace";
+
+  for(
+    let i = 0;
+    i < drops.length;
+    i++
+  ){
+
+    const char =
+    chars[
+      Math.floor(
+        Math.random() *
+        chars.length
+      )
+    ];
+
+    ctx.fillStyle =
+    "rgba(32,189,243,.65)";
+
+    ctx.fillText(
+      char,
+      i * fontSize,
+      drops[i] * fontSize
+    );
+
+    if(
+      drops[i] * fontSize >
+      canvas.height &&
+      Math.random() > .975
+    ){
+      drops[i] = 0;
+    }
+
+    drops[i]++;
+  }
+
+}
+
+setInterval(
+  drawMatrix,
+  55
+);
+
+
+/* ==================================================
+   TON CONNECT
+================================================== */
+
+/*
+ IMPORTANT:
+ Replace this URL if your manifest is hosted
+ somewhere else.
+
+ Current expected manifest:
+ https://bangpeegee.github.io/TGram-assets/tonconnect-manifest.json
+*/
+
+const MANIFEST_URL =
+"https://bangpeegee.github.io/TGram-assets/tonconnect-manifest.json";
+
+let tonConnectUI = null;
+
+try{
+
+  tonConnectUI =
+  new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: MANIFEST_URL,
+    buttonRootId: "tonConnectButton"
+  });
+
+}catch(error){
+
+  console.error(
+    "TON Connect initialization error:",
+    error
+  );
+
+}
+
+
+/* ==================================================
+   MINING STATE
+================================================== */
+
+let walletConnected = false;
+
+let miningActive = false;
+
+let miningStartTime = null;
+
+let minedAmount = 0;
+
+let miningInterval = null;
+
+
+/*
+ DEMO mining rate.
+
+ This is ONLY front-end simulation.
+
+ It does NOT mint real TGR.
+ It does NOT prove on-chain balance.
+*/
+
+const MINING_RATE =
+0.25;
+
+
+/* ==================================================
+   WALLET UI
+================================================== */
+
+function shortAddress(address){
+
+  if(!address){
+    return "Wallet not connected";
+  }
+
+  if(address.length < 16){
+    return address;
+  }
+
+  return (
+    address.slice(0,8) +
+    "..." +
+    address.slice(-8)
+  );
+
+}
+
+
+function setWalletConnected(address){
+
+  walletConnected = true;
+
+  const walletAddress =
+  document.getElementById(
+    "walletAddress"
+  );
+
+  const walletStatus =
+  document.getElementById(
+    "walletStatus"
+  );
+
+  const mineButton =
+  document.getElementById(
+    "mineButton"
+  );
+
+  walletAddress.textContent =
+  shortAddress(address);
+
+  walletStatus.textContent =
+  "🟢 Wallet connected";
+
+  walletStatus.classList.add(
+    "connected"
+  );
+
+  /*
+   IMPORTANT:
+   Actual TGR balance verification
+   must happen here through a TON
+   blockchain/indexer API.
+
+   Until balance verification exists,
+   mining remains locked.
+  */
+
+  mineButton.disabled = true;
+
+  mineButton.textContent =
+  "🔍 VERIFY TGR BALANCE";
+
+  addLog(
+    "TON wallet connected: " +
+    shortAddress(address)
+  );
+
+  addLog(
+    "Checking minimum HODL requirement..."
+  );
+
+}
+
+
+function setWalletDisconnected(){
+
+  walletConnected = false;
+
+  miningActive = false;
+
+  const walletAddress =
+  document.getElementById(
+    "walletAddress"
+  );
+
+  const walletStatus =
+  document.getElementById(
+    "walletStatus"
+  );
+
+  const mineButton =
+  document.getElementById(
+    "mineButton"
+  );
+
+  walletAddress.textContent =
+  "Wallet not connected";
+
+  walletStatus.textContent =
+  "🔴 Wallet not connected";
+
+  walletStatus.classList.remove(
+    "connected"
+  );
+
+  mineButton.disabled = true;
+
+  mineButton.textContent =
+  "🔒 CONNECT WALLET TO START";
+
+}
+
+
+/* ==================================================
+   TON CONNECT EVENTS
+================================================== */
+
+if(tonConnectUI){
+
+  tonConnectUI.onStatusChange(
+    wallet => {
+
+      if(wallet){
+
+        const address =
+        wallet.account.address;
+
+        setWalletConnected(
+          address
+        );
+
+      }else{
+
+        setWalletDisconnected();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* ==================================================
+   MINING
+================================================== */
+
+function startMining(){
+
+  if(!walletConnected){
+
+    alert(
+      "Please connect your TON wallet first."
+    );
+
+    return;
+
+  }
+
+  /*
+   IMPORTANT:
+   This demo does not verify
+   10,000 TGR on-chain yet.
+  */
+
+  if(!miningActive){
+
+    miningActive = true;
+
+    miningStartTime =
+    Date.now();
+
+    const button =
+    document.getElementById(
+      "mineButton"
+    );
+
+    button.disabled = false;
+
+    button.classList.add(
+      "active"
+    );
+
+    button.textContent =
+    "⛏️ MINING ACTIVE";
+
+    addLog(
+      "Mining session started."
+    );
+
+    miningInterval =
+    setInterval(
+      updateMining,
+      1000
+    );
+
+  }
+
+}
+
+
+function updateMining(){
+
+  if(!miningActive){
+    return;
+  }
+
+  const elapsed =
+  (Date.now() -
+   miningStartTime) /
+  3600000;
+
+  minedAmount =
+  elapsed *
+  MINING_RATE;
+
+  document.getElementById(
+    "minedAmount"
+  ).textContent =
+  minedAmount.toFixed(4);
+
+  document.getElementById(
+    "miningSpeed"
+  ).textContent =
+  MINING_RATE.toFixed(2);
+
+  const totalSeconds =
+  Math.floor(
+    (Date.now() -
+     miningStartTime) /
+    1000
+  );
+
+  const hours =
+  Math.floor(
+    totalSeconds / 3600
+  );
+
+  const minutes =
+  Math.floor(
+    (totalSeconds % 3600) /
+    60
+  );
+
+  const seconds =
+  totalSeconds % 60;
+
+  document.getElementById(
+    "miningTime"
+  ).textContent =
+    String(hours).padStart(2,"0") +
+    ":" +
+    String(minutes).padStart(2,"0") +
+    ":" +
+    String(seconds).padStart(2,"0");
+
+}
+
+
+function addLog(message){
+
+  const log =
+  document.getElementById(
+    "miningLog"
+  );
+
+  const line =
+  document.createElement(
+    "div"
+  );
+
+  line.className =
+  "log-green";
+
+  line.textContent =
+  "> " + message;
+
+  log.appendChild(line);
+
+  while(
+    log.children.length > 5
+  ){
+
+    log.removeChild(
+      log.firstChild
+    );
+
+  }
+
+}
+
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+document
+.getElementById("mineButton")
+.addEventListener(
+  "click",
+  function(){
+
+    if(
+      this.textContent.includes(
+        "VERIFY"
+      )
+    ){
+
+      /*
+       Placeholder:
+       Real balance verification
+       should be performed here.
+      */
+
+      alert(
+        "Wallet connected. On-chain TGR balance verification must be connected before mining can be unlocked."
+      );
+
+      addLog(
+        "Balance verification endpoint required."
+      );
+
+      return;
+
+    }
+
+    startMining();
+
+  }
+);
+
+
+/* ==================================================
    TELEGRAM MINI APP
-   ============================ */
+================================================== */
 
 if(
   window.Telegram &&
@@ -1726,6 +2826,7 @@ if(
 ){
 
   Telegram.WebApp.ready();
+
   Telegram.WebApp.expand();
 
 }
@@ -1733,4 +2834,4 @@ if(
 </script>
 
 </body>
-  </html>
+</html>
